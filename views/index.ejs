@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function hideMe() {
+            document.getElementById('btStart').style.display = "none";          
+        }        
+    </script>
+
+</head>
+<body>
+    </br></br>    
+
+    <h1>A idade para vacinação é: <%= age %></h1>
+    
+    </br></br>
+
+    <button id="btStart" onclick="hideMe()">Clique aqui para iniciar</button>
+
+    <input type="hidden" id="hdAge" value="<%= age %>">
+    <audio src="1.wav" autoplay="true" muted="muted"></audio>
+</body>
+
+<script>  
+    setInterval(() => {
+        if (parseInt(document.getElementById('hdAge').value) < 40) {
+            var audio = new Audio('1.wav');
+            audio.play();                 
+        }      
+    }, 10000);
+</script>
+
+</html>
